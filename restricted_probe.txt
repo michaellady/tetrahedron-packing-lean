@@ -1,0 +1,6 @@
+lattice-coordinate bounds: [-400/519, 2240/1557], [-2560/1557, 1280/1557], [-1280/1557, 2560/1557]
+uniform shift radius: 2
+entire parameter tetrahedron: 4 parameter vertices, 1996 shift/pair checks, 16 without a shared signed axis
+  unresolved shifts: [(0, -1, 1), (0, 1, -1)]
+u nonnegative: 6 parameter vertices, 1996 shift/pair checks, 0 without a shared signed axis
+u nonpositive: 6 parameter vertices, 1996 shift/pair checks, 0 without a shared signed axis

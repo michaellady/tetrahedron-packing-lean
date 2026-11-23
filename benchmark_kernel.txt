@@ -1,0 +1,42 @@
+Kernel arithmetic benchmark, Lean 4.19.0, Mathlib c44e0c8.
+
+End-to-end builds with pair coverage, offsets, regularity and spatial density
+
+32-piece supercell, 1,024 ordered pair boxes and 2,464 required shifts.
+'TetrahedronPacking.doubledCell_pair_checks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TetrahedronPacking.doubledCell_spatial_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+elapsed_seconds=137.48 peak_kib=2785612 status=0
+
+Sheared one-piece cell, 62 required shifts.
+'TetrahedronPacking.shearedLattice_spatial_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+elapsed_seconds=23.28 peak_kib=2705016 status=0
+
+Build commands from the workspace root. The recorded times include Lake
+and any dependencies rebuilt during the run.
+/usr/bin/time -f 'elapsed_seconds=%e peak_kib=%M status=%x' lake build TetrahedronPacking.CellBenchmark
+/usr/bin/time -f 'elapsed_seconds=%e peak_kib=%M status=%x' lake build TetrahedronPacking.CellControls
+
+Projection arithmetic only
+
+32-piece supercell
+2464 supplied projection comparisons, 260 distinct tuples, 39 blocks.
+'benchmarkBlock0' depends on axioms: [propext]
+'benchmarkBlock38' depends on axioms: [propext]
+All 39 blocks printed the same axiom set.
+elapsed_seconds=34.71 peak_kib=1574016 status=0
+
+256-piece supercell
+19712 supplied projection comparisons, 260 distinct tuples, 308 blocks.
+'benchmarkBlock0' depends on axioms: [propext]
+'benchmarkBlock307' depends on axioms: [propext]
+All 308 blocks printed the same axiom set.
+elapsed_seconds=336.31 peak_kib=2413124 status=0
+
+Reproduce from the workspace root, substituting 32 or 256 for N.
+lake build TetrahedronPacking
+PYTHONDONTWRITEBYTECODE=1 python3 benchmark_exact.py --lean N > /tmp/TetraBenchmark.lean
+/usr/bin/time -f 'elapsed_seconds=%e peak_kib=%M status=%x' lake env lean /tmp/TetraBenchmark.lean
+
+Timings include Lake startup and Lean checking. Python supplies the pair list,
+separating directions, and scalar offsets. Lean recomputes projection bounds
+from the vertices and checks each supplied inequality and nonzero axis.

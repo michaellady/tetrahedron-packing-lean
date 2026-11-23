@@ -1,0 +1,162 @@
+cited_paper	OpenAlex_cited_id	citing_id	doi	date	abstract_indexed	title
+ASC	W2138706582	W4210504853	https://doi.org/10.1029/2021wr031433	2022-02-01	True	Packing Fraction, Tortuosity, and Permeability of Granular‐Porous Media With Densely Packed Spheroidal Particles: Monodisperse and Polydisperse Systems
+ASC	W2138706582	W4408751204	https://doi.org/10.1007/s40964-025-01046-z	2025-03-23	True	Effect of powder characteristics on layer density, defects, and tensile properties of Ti-6Al-4V via laser powder bed fusion: establishing benchmark parameters for quality
+ASC	W2138706582	W4303413638	https://doi.org/10.1038/s41467-022-33482-8	2022-10-07	True	Migration of solidification grain boundaries and prediction
+ASC	W2138706582	W4386996275	https://doi.org/10.3390/buildings13102428	2023-09-23	True	Review of Mesoscale Geometric Models of Concrete Materials
+ASC	W2138706582	W4406955951	https://doi.org/10.1177/08927057251314425	2025-01-25	True	Microstructure generation of long fiber reinforced hybrid composites using the fused sequential addition and migration method
+ASC	W2138706582	W4281716461	https://doi.org/10.1103/physreve.105.064901	2022-06-06	True	Finding the grain size distribution that produces the densest arrangement in frictional sphere packings: Revisiting and rediscovering the century-old Fuller and Thompson distribution
+ASC	W2138706582	W4399794148	https://doi.org/10.1063/5.0216436	2024-07-17	True	Random close packing of semi-flexible polymers in two dimensions: Emergence of local and global order
+ASC	W2138706582	W4410010641	https://doi.org/10.1016/j.powtec.2025.121088	2025-04-30	False	Percolation-based mean field theory for disordered particle packings
+ASC	W2138706582	W3104149474	https://doi.org/10.1007/s10035-021-01190-7	2021-12-15	True	On regular and random two-dimensional packing of crosses
+ASC	W2138706582	W4221070611	https://doi.org/10.1063/5.0088056	2022-04-19	True	Descriptor-free unsupervised learning method for local structure identification in particle packings
+ASC	W2138706582	W4322621271	https://doi.org/10.1016/j.cartre.2023.100256	2023-02-28	True	Architecture design of novel carbon family: Polyhedra as building blocks
+ASC	W2138706582	W4385230157	https://doi.org/10.1063/5.0153596	2023-07-25	True	Densest-known packings and phase behavior of hard spherical capsids
+ASC	W2138706582	W4404188996	https://doi.org/10.1063/5.0233933	2024-11-08	True	Microstructural characterization of DEM-based random packings of monodisperse and polydisperse non-convex particles
+ASC	W2138706582	W4408016901	https://doi.org/10.1146/annurev-chembioeng-082323-092941	2025-02-27	True	Entropic Bonding—Not Quite So Simple Behaviors from Simple Hard Particles
+ASC	W2138706582	W4410889482	https://doi.org/10.1039/d5sm00332f	2025-07-02	True	Interaction of grain morphology and intergranular friction on grain packing
+ASC	W2138706582	W4416575422	https://doi.org/10.1063/5.0303040	2025-11-24	True	Communication: Modeling layered mosaic perovskite alloy microstructures across length scales via a packing algorithm
+ASC	W2138706582	W4400200541	https://doi.org/10.1063/5.0217809	2024-07-01	True	Optimal three-dimensional particle shapes for maximally dense saturated packing
+ASC	W2138706582	W4404228100	https://doi.org/10.3390/sym16111509	2024-11-11	True	Regular Dodecahedron-Based Network Structures
+ASC	W2138706582	W7172525878	https://doi.org/10.1002/smll.202600022	2026-08-05	True	Nanoscale Facet Engineering Stabilizes α‐FAPbI 3 and Suppresses Ion Migration to Realize Ambient Stable Perovskite Transistors
+ASC	W2138706582	W4321435782	https://doi.org/10.1021/acs.iecr.2c04336	2023-02-21	True	Numerical Investigations on the Flow Behaviors, Characteristics, and Mechanisms for Different Platonic Solids during Mixing in a Rotating Drum
+ASC	W2138706582	W4384942802	https://doi.org/10.1021/acs.jpcb.3c03195	2023-07-21	True	Dense Disordered Jammed Packings of Hard Spherocylinders with a Low Aspect Ratio: A Characterization of Their Structure
+ASC	W2138706582	W4413739535	https://doi.org/10.1039/9781837673940-00041	2025-08-27	True	Packings of Shape-anisotropic Particles in Quasi-1D Confinement
+ASC	W2138706582	W7128718007	https://doi.org/10.1063/5.0300000	2026-02-12	True	The assembly and auto-assembly of hard arcuate particles in R2
+ASC	W2138706582	W7140181118	https://doi.org/10.1103/zrds-xs7z	2026-04-20	True	Designing high- T c superconductors via Archimedean carbon cages and guest-host engineering
+ASC	W2138706582	W7155434360	https://doi.org/10.3389/fmars.2026.1827010	2026-04-23	True	Gas hydrate reservoir quality enhanced by framboidal pyrite formation
+ASC	W2138706582	W4372403729	https://doi.org/10.1007/s10035-023-01331-0	2023-05-06	False	A model packing based on a tree of face-to-face regular tetrahedra for monodisperse spheres
+ASC	W2138706582	W4226266030	https://doi.org/10.48550/arxiv.2202.11358	2022-02-23	True	Packing and covering in higher dimensions
+ASC	W2138706582	W4320559720	https://doi.org/10.48550/arxiv.2302.05102	2023-02-10	True	A Monte Carlo packing algorithm for poly-ellipsoids and its comparison with packing generation using Discrete Element Model
+ASC	W2138706582	W7172177940		2026-01-01	True	Packing Regular Spherical Polygons
+ASC	W2138706582	W4225763880	https://doi.org/10.48550/arxiv.2202.11366	2022-02-23	True	Miscellaneous problems about packing and covering
+ASC	W2138706582	W4393902138	https://doi.org/10.1088/1674-1056/ad39d0	2024-04-03	True	Structure and dynamical properties during solidification of liquid aluminum induced by cooling and compression
+ASC	W2138706582	W4413739565	https://doi.org/10.1039/9781837673940-00174	2025-08-27	True	Hyperuniform Quasi-long-range Correlations in Maximally Random Jammed Hard-particle Packings
+ASC	W2138706582	W4416526264	https://doi.org/10.1016/b978-0-44-327314-8.00020-8	2025-11-21	False	Monte Carlo simulations of packings of colloidal systems
+ASC	W2138706582	W7131626659	https://doi.org/10.1021/acs.nanolett.6c00158	2026-02-26	True	Synthesis of Monodisperse PbS/CdS Colloidal Quantum Dots Emitting at Telecommunication Wavelengths with suppressed Auger Rates and Gain Threshold
+ASC	W2138706582	W7134139022	https://doi.org/10.1016/j.powtec.2026.122384	2026-03-07	True	Random packing of polydisperse spheres as a model of shrunken solidified suspensions
+ASC	W2138706582	W7142532470	https://doi.org/10.1016/j.ijsolstr.2026.113949	2026-03-28	False	Investigation of a novel space-filling polyhedral unit for construction applications
+ASC	W2138706582	W7165670986	https://doi.org/10.48550/arxiv.2606.23628	2026-06-22	True	Two-dimensional stealthy hyperuniform polycrystalline disk packings
+ASC	W2138706582	W7165775387	https://doi.org/10.1021/acscentsci.6c00194	2026-06-24	True	A Mosaic Layered Halide-Perovskite Spin Glass: Mechanochemical Alloying of a Ferromagnet and a Paramagnet
+ASC	W2138706582	W7214150100	https://doi.org/10.1021/acsnano.6c12187	2026-09-24	True	Quasicrystalline Order in Soft Matter Systems
+CEG	W1968836887	W7221469028	https://doi.org/10.1111/itor.70279	2026-10-11	True	Optimized packing soft 3D polyhedra
+CEG	W1968836887	W7221771822	https://doi.org/10.1007/978-3-032-26888-4_10	2026-10-06	False	Timeline of 21st Century Mathematics
+CEG	W1968836887	W7221785731	https://doi.org/10.1007/978-3-032-26888-4_5	2026-10-06	False	Geometry and Topology
+CEG	W1968836887	W7214150100	https://doi.org/10.1021/acsnano.6c12187	2026-09-24	True	Quasicrystalline Order in Soft Matter Systems
+CEG	W1968836887	W7214087030	https://doi.org/10.48550/arxiv.2609.26627	2026-09-22	True	Dense Packing of Tetrahedra in Cylinders
+CEG	W1968836887	W7213883025	https://doi.org/10.1007/978-981-95-6449-1_22	2026-09-02	False	Architecture at the Intersection of Spaces. Adaptive Structural Systems
+CEG	W1968836887	W7134036231	https://doi.org/10.1039/d5sm01271f	2026-04-01	True	Using particle shape to control defects in colloidal crystals on spherical interfaces
+CEG	W1968836887	W4416137851	https://doi.org/10.1016/j.disc.2026.115087	2026-03-12	True	On the minimal area of quadrangles circumscribed about planar convex bodies
+CEG	W1968836887	W7172177940		2026-01-01	True	Packing Regular Spherical Polygons
+CEG	W1968836887	W4413739431	https://doi.org/10.1039/9781837673940-00001	2025-08-27	True	A Brief Overview of Packing Problems
+CEG	W1968836887	W4413739564	https://doi.org/10.1039/9781837673940-00142	2025-08-27	True	Random Packings of Ellipsoidal Particles and Their Local Packing Properties
+CEG	W1968836887	W4408770761	https://doi.org/10.1038/s41563-025-02185-y	2025-03-24	True	Octo-diamond crystal of nanoscale tetrahedra with interchanging chiral motifs
+CEG	W1968836887	W4408016901	https://doi.org/10.1146/annurev-chembioeng-082323-092941	2025-02-27	True	Entropic Bonding—Not Quite So Simple Behaviors from Simple Hard Particles
+CEG	W1968836887	W4409672046	https://doi.org/10.20312/dim.2024.01	2024-12-05	True	Egybevágó tetraéderek optimális térbeli pakolásairól és fedéseiről
+CEG	W1968836887	W4404228100	https://doi.org/10.3390/sym16111509	2024-11-11	True	Regular Dodecahedron-Based Network Structures
+CEG	W1968836887	W4402764403	https://doi.org/10.1021/acs.chemrev.4c00299	2024-09-24	True	Engineering Anisotropy into Organized Nanoscale Matter
+CEG	W1968836887	W4400887188	https://doi.org/10.1063/5.0215370	2024-07-22	True	Unusual dynamics of tetrahedral liquids caused by the competition between dynamic heterogeneity and structural heterogeneity
+CEG	W1968836887	W4393280196	https://doi.org/10.1557/s43577-024-00688-8	2024-03-28	False	Chemical and architectural intricacy from nanoscale tetrahedra and their analogues
+CEG	W1968836887	W4390886598	https://doi.org/10.1039/d3na00470h	2024-02-13	True	Tetrahedron clusters serving as a platform for foam-like structure design
+CEG	W1968836887	W4390047523	https://doi.org/10.1103/physrevlett.131.258201	2023-12-21	True	Rationalizing Euclidean Assemblies of Hard Polyhedra from Tessellations in Curved Space
+CEG	W1968836887	W4388101263	https://doi.org/10.1021/acs.jpcc.3c05520	2023-10-30	True	Tetrahedral Stacking of Copper in Its Incubation Period of Crystallization: A Study of Large-Scale Molecular Dynamics Simulation
+CEG	W1968836887	W7151778120	https://doi.org/10.70675/55a90afbzcd1az423cz9c1fz189d6633ef25	2023-10-26	True	Densité des arrangements de disques et de sphères : aspects théoriques et computationnels de l’approche de densité locale
+CEG	W1968836887	W4385060269	https://doi.org/10.1039/d2sm01430k	2023-09-20	True	Machine learning approaches for the optimization of packing densities in granular matter
+CEG	W1968836887	W4385514243	https://doi.org/10.1021/jacs.3c05299	2023-08-03	True	Controlled Self-Assembly of Gold Nanotetrahedra into Quasicrystals and Complex Periodic Supracrystals
+CEG	W1968836887	W4362499619	https://doi.org/10.1039/d3sm00166k	2023-05-10	True	Optimal shapes of disk assembly in saturated random packings
+CEG	W1968836887	W4313598087	https://doi.org/10.1016/j.matt.2022.09.027	2023-01-01	False	Quasicrystalline materials from non-atom building blocks
+CEG	W1968836887	W4286492472	https://doi.org/10.1038/s41467-022-31868-2	2022-07-21	True	Assembly of planar chiral superlattices from achiral building blocks
+CEG	W1968836887	W4226440530	https://doi.org/10.1007/s41745-022-00301-4	2022-05-17	False	IntroSurvey of Representation Theory
+CEG	W1968836887	W4213248941	https://doi.org/10.1088/1361-648x/ac55d6	2022-05-03	True	Computer simulations of self-assembly of anisotropic colloids
+CEG	W1968836887	W4225763880	https://doi.org/10.48550/arxiv.2202.11366	2022-02-23	True	Miscellaneous problems about packing and covering
+DC	W2083379047	W7152522387	https://doi.org/10.1016/j.apt.2026.105256	2026-04-09	False	DEM simulation on the random packing of multilobed particles
+DC	W2083379047	W7221788693	https://doi.org/10.48550/arxiv.2610.14463	2026-10-10	True	Soft-to-Rigid: Shape Continuation as an Alternative Search for Packing Congruent Shapes
+GEK	W2017443311	W7221785731	https://doi.org/10.1007/978-3-032-26888-4_5	2026-10-06	False	Geometry and Topology
+GEK	W2017443311	W4416137851	https://doi.org/10.1016/j.disc.2026.115087	2026-03-12	True	On the minimal area of quadrangles circumscribed about planar convex bodies
+GEK	W2017443311	W7172177940		2026-01-01	True	Packing Regular Spherical Polygons
+GEK	W2017443311	W4414024419	https://doi.org/10.1137/24m1658784	2025-09-05	True	A Design Criterion for the Rayleigh Fading Wiretap Channel Based on \({\ell^1}\)-Norm Theta Functions
+GEK	W2017443311	W4408770761	https://doi.org/10.1038/s41563-025-02185-y	2025-03-24	True	Octo-diamond crystal of nanoscale tetrahedra with interchanging chiral motifs
+GEK	W2017443311	W4404228100	https://doi.org/10.3390/sym16111509	2024-11-11	True	Regular Dodecahedron-Based Network Structures
+GEK	W2017443311	W7151778120	https://doi.org/10.70675/55a90afbzcd1az423cz9c1fz189d6633ef25	2023-10-26	True	Densité des arrangements de disques et de sphères : aspects théoriques et computationnels de l’approche de densité locale
+GEK	W2017443311	W4387665666	https://doi.org/10.1007/s00454-023-00602-0	2023-10-16	False	Lower Bound on Translative Covering Density of Tetrahedra
+GEK	W2017443311	W4385723600	https://doi.org/10.1137/22m1514155	2023-08-10	True	Lower Bounds on Lattice Covering Densities of Simplices
+GEK	W2017443311	W4225763880	https://doi.org/10.48550/arxiv.2202.11366	2022-02-23	True	Miscellaneous problems about packing and covering
+KEG	W2016323043	W4408770761	https://doi.org/10.1038/s41563-025-02185-y	2025-03-24	True	Octo-diamond crystal of nanoscale tetrahedra with interchanging chiral motifs
+KEG	W2016323043	W4408016901	https://doi.org/10.1146/annurev-chembioeng-082323-092941	2025-02-27	True	Entropic Bonding—Not Quite So Simple Behaviors from Simple Hard Particles
+KEG	W2016323043	W4404228100	https://doi.org/10.3390/sym16111509	2024-11-11	True	Regular Dodecahedron-Based Network Structures
+KEG	W2016323043	W4384942802	https://doi.org/10.1021/acs.jpcb.3c03195	2023-07-21	True	Dense Disordered Jammed Packings of Hard Spherocylinders with a Low Aspect Ratio: A Characterization of Their Structure
+KEG	W2016323043	W4390886598	https://doi.org/10.1039/d3na00470h	2024-02-13	True	Tetrahedron clusters serving as a platform for foam-like structure design
+KEG	W2016323043	W4225763880	https://doi.org/10.48550/arxiv.2202.11366	2022-02-23	True	Miscellaneous problems about packing and covering
+KEG	W2016323043	W4409672046	https://doi.org/10.20312/dim.2024.01	2024-12-05	True	Egybevágó tetraéderek optimális térbeli pakolásairól és fedéseiről
+KEG	W2016323043	W7221785731	https://doi.org/10.1007/978-3-032-26888-4_5	2026-10-06	False	Geometry and Topology
+TJ	W2153489159	W7221785731	https://doi.org/10.1007/978-3-032-26888-4_5	2026-10-06	False	Geometry and Topology
+TJ	W2153489159	W4413739431	https://doi.org/10.1039/9781837673940-00001	2025-08-27	True	A Brief Overview of Packing Problems
+TJ	W2153489159	W4316345162	https://doi.org/10.1007/s10035-022-01300-z	2023-01-16	False	Numerical study on wave propagation in a row of topologically interlocked tetrahedra
+cylinder	W7214087030					No indexed citing work in window
+gold	W4385514243	W7167599717	https://doi.org/10.1021/jacs.6c14044	2026-09-25	True	Ligand-Shell Softness Directs Symmetry Transitions in Nanotripod Superstructures
+gold	W4385514243	W7214150100	https://doi.org/10.1021/acsnano.6c12187	2026-09-24	True	Quasicrystalline Order in Soft Matter Systems
+gold	W4385514243	W7214357220	https://doi.org/10.26434/chemrxiv.15009461/v1	2026-09-24	True	A Roadmap for Supercrystallography: From Single-Supercrystal Diffraction to the Atomic Structure of Colloidal Nanocrystals
+gold	W4385514243	W7214117430	https://doi.org/10.1016/j.jcis.2026.141644	2026-09-23	False	Adaptive ligand-mediated frustrated assembly of gold tetrahedral nanoparticles
+gold	W4385514243	W7214087030	https://doi.org/10.48550/arxiv.2609.26627	2026-09-22	True	Dense Packing of Tetrahedra in Cylinders
+gold	W4385514243	W7213986186	https://doi.org/10.1007/s11426-026-3502-9	2026-09-17	False	Modular assembly of tetrahedral units: decoding the atomic blueprint of metal nanomaterials
+gold	W4385514243	W7211910968	https://doi.org/10.1021/acsmacrolett.6c00286	2026-09-07	True	Two-Step Self-Assembly Mechanisms and Crystal–Quasicrystal Transition Kinetics in DNA Dodecagonal Quasicrystals
+gold	W4385514243	W7204819002	https://doi.org/10.1021/acs.chemrev.5c00965	2026-08-24	True	Synthesis, Self-Assembly, Graph Theory, and Applications of Complex Nanoparticle Systems
+gold	W4385514243	W7166178521	https://doi.org/10.1039/d6cp01259k	2026-08-12	True	Nano-gold with in situ -grown surface-charge layer in organic framework, superlattice–chiral structures, and tailored optical properties
+gold	W4385514243	W7172412615	https://doi.org/10.1021/acsnano.6c11663	2026-08-03	True	Synergizing Mild Reducing Agents for Geometry-Controlled Nanocrystal Growth: A Case Study of Gold Nanooctahedra
+gold	W4385514243	W7165888817	https://doi.org/10.1038/s41524-026-02201-y	2026-06-25	True	Anatomy of a complex crystallization pathway
+gold	W4385514243	W7165166691	https://doi.org/10.1038/s44160-026-01095-4	2026-06-18	False	The importance of nano-edges in atomic stencilling and chiroptically active assembly of patchy gold tetrahedra
+gold	W4385514243	W7134245132	https://doi.org/10.1007/s10853-026-12527-z	2026-03-09	False	CTAB–4,4′-bipyridine interface-mediated self-assembly of gold nanobipyramids into stable plasmonic chains
+gold	W4385514243	W7128615571	https://doi.org/10.1016/j.apsusc.2026.166295	2026-02-12	False	Kinetic engineering for the robust synthesis of Au nanocubes in cetylpyridinium chloride (CPC) system
+gold	W4385514243	W7124303677	https://doi.org/10.48550/arxiv.2601.09192	2026-01-14	True	Entropic Colloidal Crystal Prediction: A Quantum Density Functional Theory Inspired Approach
+gold	W4385514243	W7123831670	https://doi.org/10.1021/jacs.5c20994	2026-01-13	True	Assembly of Tetrahedral Units in the Atomic-Resolved Structural Evolution of Gold Nanostructures
+gold	W4385514243	W7117550523	https://doi.org/10.1063/5.0292922	2025-12-28	True	A patchy-particle three-dimensional octagonal quasicrystal
+gold	W4385514243	W4414517960	https://doi.org/10.1021/acsnano.5c10677	2025-09-25	True	Nanoparticle Superlattices Assembled via Rapid Solvent Destabilization of Macromolecular Ligands
+gold	W4385514243	W4413965047	https://doi.org/10.1021/acsnano.5c07838	2025-09-03	True	Prospects of Nanoscience with Nanocrystals: 2025 Edition
+gold	W4385514243	W4413825216	https://doi.org/10.1016/j.surfin.2025.107555	2025-08-29	False	A surface-charge regulated HCP nano-gold with a quantum-confined ferroelectric polymer and its impacts on tailored ferroic and optical properties
+gold	W4385514243	W4412493776	https://doi.org/10.1126/sciadv.adw2740	2025-07-18	True	Superstructural phase transitions in polymer-grafted nanooctahedra
+gold	W4385514243	W4411054806	https://doi.org/10.1002/anie.202502724	2025-06-10	True	Ionic Liquid Accelerates Electrochemically Driven Single‐Molecule Oxidative Coupling
+gold	W4385514243	W4411054807	https://doi.org/10.1002/ange.202502724	2025-06-10	True	Ionic Liquid Accelerates Electrochemically Driven Single‐Molecule Oxidative Coupling
+gold	W4385514243	W4409832565	https://doi.org/10.1002/adom.202500596	2025-04-26	True	Multicolor Electrochromism via Plasmonic Tuning in Au NBPs@PANI Nanostructures with Ultrafast Switching and Enhanced Bistability
+gold	W4385514243	W4408770761	https://doi.org/10.1038/s41563-025-02185-y	2025-03-24	True	Octo-diamond crystal of nanoscale tetrahedra with interchanging chiral motifs
+gold	W4385514243	W4407312768	https://doi.org/10.26599/nr.2025.94907286	2025-02-10	True	Electron microscopy in nanoparticle self-assembly research
+gold	W4385514243	W4405416974	https://doi.org/10.1002/smll.202410296	2024-12-15	True	Gold Tetrahedral Nanoframes with Mono‐Rim or Dual‐Rim Morphologies for Enhanced Near‐Field Focusing in SERS
+gold	W4385514243	W4404672685	https://doi.org/10.1038/d41586-024-03772-w	2024-11-25	False	Forty years of crazy crystals
+gold	W4385514243	W4403245252	https://doi.org/10.1103/physrevb.110.144106	2024-10-09	True	Higher-dimensional geometrical approach for the characterization of two-dimensional square-triangle-rhombus tilings
+gold	W4385514243	W4402764403	https://doi.org/10.1021/acs.chemrev.4c00299	2024-09-24	True	Engineering Anisotropy into Organized Nanoscale Matter
+gold	W4385514243	W4402574631	https://doi.org/10.1021/acs.jpclett.4c02146	2024-09-17	True	Coherent Phonon Dynamics in Plasmonic Gold Tetrahedral Nanoparticle Ensembles
+gold	W4385514243	W4401368211	https://doi.org/10.1038/s44286-024-00102-9	2024-08-06	False	Engineering and direct imaging of nanocube self-assembly pathways
+gold	W4385514243	W4400498110	https://doi.org/10.1002/smll.202403970	2024-07-10	True	Supercrystal Engineering of Nanoarrows Enabled by Tailored Concavity
+gold	W4385514243	W4399303130	https://doi.org/10.1557/s43580-024-00859-4	2024-06-03	True	A snapshot review of dynamic colloidal nanoparticle superlattices
+gold	W4385514243	W4399169414	https://doi.org/10.1021/acsnano.3c10201	2024-05-30	True	Nanocrystal Assemblies: Current Advances and Open Problems
+gold	W4385514243	W4394827528	https://doi.org/10.1039/d4sm00177j	2024-05-01	True	Theory and simulation of ligand functionalized nanoparticles – a pedagogical overview
+gold	W4385514243	W4394728399	https://doi.org/10.1021/jacs.4c01232	2024-04-11	True	Growth of Nanocrystal Superlattices from Liquid Crystals
+gold	W4385514243	W4393280196	https://doi.org/10.1557/s43577-024-00688-8	2024-03-28	False	Chemical and architectural intricacy from nanoscale tetrahedra and their analogues
+gold	W4385514243	W4392306220	https://doi.org/10.1039/d4cc00332b	2024-03-21	True	Controllable synthesis of star-shaped FeCoMnO x nanocrystals and their self-assembly into superlattices with low-packing densities
+gold	W4385514243	W4392857946	https://doi.org/10.1557/s43577-024-00687-9	2024-03-15	False	Patchy nanoparticles with surface complexity for directed self-assembly
+gold	W4385514243	W4389940661	https://doi.org/10.1209/0295-5075/ad16f3	2023-12-01	True	Some examples of quasiperiodic tilings obtained with a simple grid method
+phase	W2054289502	W7224434343	https://doi.org/10.1080/00268976.2026.2732288	2026-10-29	True	Molecular dynamics study of water-like anomalies, hexatic melting, and quasicrystal formation in two-dimensional systems
+phase	W2054289502	W7160961805	https://doi.org/10.1063/5.0342824	2026-10-12	True	Path dependence in alchemical calculations of water chemical potential in aqueous electrolytes
+phase	W2054289502	W7212014744	https://doi.org/10.48550/arxiv.2609.09057	2026-09-08	True	Discretization strategies for colloidal particles in multiparticle collision dynamics simulations
+phase	W2054289502	W7165888817	https://doi.org/10.1038/s41524-026-02201-y	2026-06-25	True	Anatomy of a complex crystallization pathway
+phase	W2054289502	W7161137534	https://doi.org/10.1126/science.aeb5134	2026-05-14	True	Decoding collective dynamics and complexity in nanoparticle assemblies using graph theory
+phase	W2054289502	W7160830572	https://doi.org/10.1073/pnas.2537764123	2026-05-11	True	Exploring entropy landscapes using hard particle Monte Carlo metadynamics
+phase	W2054289502	W7140042753	https://doi.org/10.1017/jfm.2026.11287	2026-03-23	True	Frenkel’s entropy-exchange mechanism in monodisperse, nearly hard-sphere colloids: minimal perturbations to access fluid–crystal coexistence
+phase	W2054289502	W7130602629	https://doi.org/10.1002/aic.70275	2026-02-19	True	The elusive fluid‐and‐crystal coexistence state in simulations of monodisperse, hard‐sphere colloids
+phase	W2054289502	W4414816955	https://doi.org/10.1021/acs.cgd.5c01399	2026-02-13	True	Robustness of Classical Nucleation Theory to Chemical Heterogeneity of Crystal Nucleating Substrates
+phase	W2054289502	W7172345965	https://doi.org/10.1039/d6gc02058e	2026-01-01	True	Rapid and green aqueous synthesis of a porous hydrogen-bonded organic framework contrary to Wallach's rule
+phase	W2054289502	W4416526264	https://doi.org/10.1016/b978-0-44-327314-8.00020-8	2025-11-21	False	Monte Carlo simulations of packings of colloidal systems
+phase	W2054289502	W4410398318	https://doi.org/10.1103/physrevlett.134.198201	2025-05-15	True	Entropic Trapping of Hard Spheres in Spherical Confinement
+phase	W2054289502	W4408016901	https://doi.org/10.1146/annurev-chembioeng-082323-092941	2025-02-27	True	Entropic Bonding—Not Quite So Simple Behaviors from Simple Hard Particles
+phase	W2054289502	W4407521083	https://doi.org/10.1103/physrevresearch.7.l012034	2025-02-13	True	In pursuit of the tetratic phase in hard rectangles
+phase	W2054289502	W4404765450	https://doi.org/10.1063/5.0233373	2024-11-27	True	Understanding orientational disorder in crystalline assemblies of hard convex polyhedra
+phase	W2054289502	W4395680389	https://doi.org/10.1039/d4sm00271g	2024-05-15	True	Mesoscale simulations of diffusion and sedimentation in shape-anisotropic nanoparticle suspensions
+phase	W2054289502	W4390047523	https://doi.org/10.1103/physrevlett.131.258201	2023-12-21	True	Rationalizing Euclidean Assemblies of Hard Polyhedra from Tessellations in Curved Space
+phase	W2054289502	W4388234082	https://doi.org/10.1038/s41563-023-01706-x	2023-11-02	False	Colloidal quasicrystals engineered with DNA
+phase	W2054289502	W4386321408	https://doi.org/10.1039/d3sm00891f	2023-09-20	True	Tunable assembly of host–guest colloidal crystals
+phase	W2054289502	W4385514243	https://doi.org/10.1021/jacs.3c05299	2023-08-03	True	Controlled Self-Assembly of Gold Nanotetrahedra into Quasicrystals and Complex Periodic Supracrystals
+phase	W2054289502	W4378212068	https://doi.org/10.1038/s41557-023-01200-6	2023-05-25	False	Entropy compartmentalization stabilizes open host–guest colloidal clathrates
+phase	W2054289502	W4322624044	https://doi.org/10.1021/acsnano.2c07960	2023-02-28	True	Engineering the Thermodynamic Stability and Metastability of Mesophases of Colloidal Bipyramids through Shape Entropy
+phase	W2054289502	W4311746758	https://doi.org/10.1063/5.0131028	2023-01-20	True	Phase diagrams—Why they matter and how to predict them
+phase	W2054289502	W4310641070	https://doi.org/10.1038/s41467-022-34891-5	2022-11-30	True	Entropically engineered formation of fivefold and icosahedral twinned clusters of colloidal shapes
+phase	W2054289502	W4283718061	https://doi.org/10.1038/s41586-022-05384-8	2022-11-28	False	Chiral assemblies of pinwheel superlattices on substrates
+phase	W2054289502	W4206123451	https://doi.org/10.1073/pnas.2116414119	2022-01-18	True	A theory of entropic bonding
+phase	W2054289502	W4200468459	https://doi.org/10.3389/fchem.2021.783741	2021-12-07	True	Structure of Simple Dipolar Water-Like Fluids: Primitive Model and Hard Tetrahedra

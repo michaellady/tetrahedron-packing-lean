@@ -1,0 +1,7 @@
+one-particle benchmark: Replay(tetra_count=1, squared_edge=8, tetra_volume=Fraction(8, 3), cell_volume=Fraction(196, 27), checks=26, zero_gap_witnesses=14, max_shift=1, missing_axis=None)
+one-particle density: 18/49
+published cell: Replay(tetra_count=4, squared_edge=18, tetra_volume=Fraction(9, 1), cell_volume=Fraction(42039, 1000), checks=308, zero_gap_witnesses=66, max_shift=2, missing_axis=None)
+density: 4000/4671
+same lattice in a skew basis: Replay(tetra_count=4, squared_edge=18, tetra_volume=Fraction(9, 1), cell_volume=Fraction(42039, 1000), checks=932, zero_gap_witnesses=78, max_shift=7, missing_axis=None)
+negative control, duplicate rejected at: (0, 1, (0, 0, 0))
+negative control, duplicate through a remote translate: (0, 1, (0, -3, 0))

@@ -1,0 +1,57 @@
+ℹ [2281/2297] Replayed TetrahedronPacking.PackingMeasure
+info: ./././research/tetrahedra/TetrahedronPacking/PackingMeasure.lean:100:0: 'TetrahedronPacking.measure_iUnion_of_disjoint_convex_interiors' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/PackingMeasure.lean:101:0: 'TetrahedronPacking.covered_window_sandwich' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/PackingMeasure.lean:102:0: 'TetrahedronPacking.lattice_count_in_coordinate_cubes' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2282/2297] Replayed TetrahedronPacking.PeriodicDensity
+info: ./././research/tetrahedra/TetrahedronPacking/PeriodicDensity.lean:132:0: 'TetrahedronPacking.periodic_convex_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2283/2297] Replayed TetrahedronPacking.PeriodicSeparation
+info: ./././research/tetrahedra/TetrahedronPacking/PeriodicSeparation.lean:131:0: 'TetrahedronPacking.disjoint_interiors_of_separating_plane' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/PeriodicSeparation.lean:132:0: 'TetrahedronPacking.shift_bounds_of_hulls_intersect' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/PeriodicSeparation.lean:133:0: 'TetrahedronPacking.disjoint_interiors_of_bounded_shift_certificates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [2284/2297] Replayed TetrahedronPacking.RecordArithmetic
+info: ./././research/tetrahedra/TetrahedronPacking/RecordArithmetic.lean:134:0: 'TetrahedronPacking.record_bounded_separations' depends on axioms: [propext]
+info: ./././research/tetrahedra/TetrahedronPacking/RecordArithmetic.lean:135:0: 'TetrahedronPacking.integerSeparates_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/RecordArithmetic.lean:136:0: 'TetrahedronPacking.record_integer_planes' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/RecordArithmetic.lean:137:0: 'TetrahedronPacking.record_integer_edge_lengths' depends on axioms: [propext]
+ℹ [2285/2297] Replayed TetrahedronPacking.IntegerCertificate
+info: ./././research/tetrahedra/TetrahedronPacking/IntegerCertificate.lean:58:0: 'TetrahedronPacking.integer_separator_plane' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/IntegerCertificate.lean:89:0: 'TetrahedronPacking.integer_shift_certificates' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/IntegerCertificate.lean:150:0: 'TetrahedronPacking.integer_shift_certificates_of_box' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2286/2297] Replayed TetrahedronPacking.RecordGeometry
+info: ./././research/tetrahedra/TetrahedronPacking/RecordGeometry.lean:196:0: 'TetrahedronPacking.record_disjoint_interiors' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/RecordGeometry.lean:197:0: 'TetrahedronPacking.record_squared_edge_lengths' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/RecordGeometry.lean:198:0: 'TetrahedronPacking.record_period_cell_volume' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/RecordGeometry.lean:199:0: 'TetrahedronPacking.record_edge_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/RecordGeometry.lean:200:0: 'TetrahedronPacking.record_pairwise_disjoint_interiors' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2288/2297] Replayed TetrahedronPacking.SimplexVolume
+info: ./././research/tetrahedra/TetrahedronPacking/SimplexVolume.lean:107:0: '_private.TetrahedronPacking.SimplexVolume.0.TetrahedronPacking.orderedCube_volume' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/SimplexVolume.lean:181:0: 'TetrahedronPacking.tetrahedron_volume' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2289/2297] Replayed TetrahedronPacking.RecordDensity
+info: ./././research/tetrahedra/TetrahedronPacking/RecordDensity.lean:86:0: 'TetrahedronPacking.record_spatial_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2290/2297] Replayed TetrahedronPacking.CellChecker
+info: ./././research/tetrahedra/TetrahedronPacking/CellChecker.lean:144:0: 'TetrahedronPacking.IntegerCell.disjoint_of_checkPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2291/2297] Replayed TetrahedronPacking.CellDensity
+info: ./././research/tetrahedra/TetrahedronPacking/CellDensity.lean:139:0: 'TetrahedronPacking.IntegerCell.spatial_density_of_checks' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/CellDensity.lean:140:0: 'TetrahedronPacking.IntegerCell.regular_of_checkRegular' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/CellDensity.lean:162:0: 'TetrahedronPacking.IntegerCell.beats_record_of_checks' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2292/2297] Replayed TetrahedronPacking.CellImprovement
+info: ./././research/tetrahedra/TetrahedronPacking/CellImprovement.lean:35:0: 'TetrahedronPacking.IntegerCell.regular_packing_beats_record' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2293/2297] Replayed TetrahedronPacking.RestrictedDeterminant
+info: ./././research/tetrahedra/TetrahedronPacking/RestrictedDeterminant.lean:89:0: 'TetrahedronPacking.double_dimer_volume_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/RestrictedDeterminant.lean:90:0: 'TetrahedronPacking.published_period_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/RestrictedDeterminant.lean:91:0: 'TetrahedronPacking.double_dimer_density_ratio_upper_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/RestrictedDeterminant.lean:92:0: 'TetrahedronPacking.double_dimer_ratio_attains_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2294/2297] Replayed TetrahedronPacking.CellBenchmark
+info: ./././research/tetrahedra/TetrahedronPacking/CellBenchmark.lean:69:0: 'TetrahedronPacking.doubledCell_pair_checks' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/CellBenchmark.lean:70:0: 'TetrahedronPacking.doubledCell_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ./././research/tetrahedra/TetrahedronPacking/CellBenchmark.lean:71:0: 'TetrahedronPacking.doubledCell_spatial_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [2295/2297] Built TetrahedronPacking
+ℹ [2296/2297] Built TetrahedronPacking.CellControls
+info: ./././research/tetrahedra/TetrahedronPacking/CellControls.lean:57:0: 'TetrahedronPacking.shearedLattice_spatial_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully.

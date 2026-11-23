@@ -1,0 +1,5 @@
+  4 pieces     308 checked pairs      1996 uniform box  radius 2    0.255 s
+ 16 pieces    1232 checked pairs      6896 uniform box  radius 1    0.929 s
+ 32 pieces    2464 checked pairs     27616 uniform box  radius 1    1.727 s
+128 pieces    9856 checked pairs    442240 uniform box  radius 1    7.257 s
+256 pieces   19712 checked pairs   1769216 uniform box  radius 1   15.501 s

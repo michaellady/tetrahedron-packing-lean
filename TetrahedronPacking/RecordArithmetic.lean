@@ -1,8 +1,12 @@
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.Fintype.Prod
-import Mathlib.Data.Fin.VecNotation
-import Mathlib.Tactic.FinCases
-import Mathlib.Tactic.NormNum
+module
+
+public import Mathlib.Data.Int.Basic
+public import Mathlib.Data.Fintype.Prod
+public import Mathlib.Data.Fin.VecNotation
+public import Mathlib.Tactic.FinCases
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /-!
 # Exact arithmetic for the Chen–Engel–Glotzer record
@@ -88,15 +92,15 @@ theorem integerSeparates_sound (n : Fin 3 → ℤ) (v w : Fin 4 → Fin 3 → �
   · left
     intro a b
     exact (integerProjectionBounds_spec n v a).2.trans
-      (hw.trans (add_le_add_right (integerProjectionBounds_spec n w b).1 _))
+      (hw.trans (add_le_add_left (integerProjectionBounds_spec n w b).1 _))
   · right
     intro a b
-    exact (add_le_add_right (integerProjectionBounds_spec n w b).2 _).trans
+    exact (add_le_add_left (integerProjectionBounds_spec n w b).2 _).trans
       (hw.trans (integerProjectionBounds_spec n v a).1)
 
 set_option maxRecDepth 10000 in
 set_option maxHeartbeats 2000000 in
-theorem record_bounded_separations (i j : Fin 4) (x y z : Fin 5) :
+private theorem record_bounded_separations (i j : Fin 4) (x y z : Fin 5) :
     (i = j ∧ x = 2 ∧ y = 2 ∧ z = 2) ∨
     axes.any (fun n => separates n i j (x.val - (2 : ℤ)) (y.val - (2 : ℤ))
       (z.val - (2 : ℤ))) = true := by

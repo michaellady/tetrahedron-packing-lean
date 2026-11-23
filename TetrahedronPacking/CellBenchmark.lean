@@ -1,4 +1,9 @@
-import TetrahedronPacking.CellDensity
+module
+
+public import TetrahedronPacking.CellDensity
+public import Mathlib.LinearAlgebra.Matrix.Notation
+
+@[expose] public section
 
 /-!
 # End-to-end 32-piece benchmark

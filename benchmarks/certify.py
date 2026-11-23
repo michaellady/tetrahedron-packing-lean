@@ -71,6 +71,7 @@ def input : CellInput {len(pieces)} := ⟨{denominator}, {period_term}, {piece_t
 def cell : IntegerCell {len(pieces)} :=
   input.toIntegerCell !![{inverse}] {abs(determinant) // common} {axes_term}
 
+set_option maxRecDepth 20000 in
 theorem canonical_json : input.canonicalJson = include_str "cell.json" := by decide +kernel
 
 theorem positive_units : 0 < input.coordinateDenominator := by decide +kernel

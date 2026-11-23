@@ -1,6 +1,10 @@
-import TetrahedronPacking.IntegerCertificate
-import Mathlib.LinearAlgebra.Matrix.ToLin
-import Mathlib.Tactic.FieldSimp
+module
+
+public import TetrahedronPacking.IntegerCertificate
+public import Mathlib.LinearAlgebra.Matrix.ToLin
+public import Mathlib.Tactic.FieldSimp
+
+@[expose] public section
 
 /-!
 # Exact periodic cell checking
@@ -65,12 +69,12 @@ private theorem cast_mul_scalar_one (B A : Matrix (Fin 3) (Fin 3) ℤ) (d : ℤ)
   ext i j
   have hij := congrArg (fun M : Matrix (Fin 3) (Fin 3) ℤ => M i j) h
   by_cases he : i = j
-  · simp [Matrix.mul_apply, Matrix.one_apply, he] at hij ⊢
+  · simp [Matrix.mul_apply, he] at hij ⊢
     exact_mod_cast hij
-  · simp [Matrix.mul_apply, Matrix.one_apply, he] at hij ⊢
+  · simp [Matrix.mul_apply, he] at hij ⊢
     exact_mod_cast hij
 
-private theorem real_inverse_products {m : ℕ} (g : IntegerCell m) (h : g.inverseValid) :
+theorem real_inverse_products {m : ℕ} (g : IntegerCell m) (h : g.inverseValid) :
     g.realPeriods * g.realInverse = 1 ∧ g.realInverse * g.realPeriods = 1 := by
   have hd : (g.denominator : ℝ) ≠ 0 := by exact_mod_cast h.1.ne'
   constructor

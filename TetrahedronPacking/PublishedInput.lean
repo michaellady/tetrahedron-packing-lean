@@ -1,4 +1,14 @@
-import TetrahedronPacking.CellInput
+module
+
+public import TetrahedronPacking.CellInput
+public import Mathlib.LinearAlgebra.Matrix.Notation
+import all Init.Data.String.Basic
+import all Init.Data.ToString.Basic
+import all Init.Data.String.Defs
+import all Init.Data.Nat.ToString
+import all Init.Data.Int.ToString
+
+@[expose] public section
 
 /-!
 # Certifying the published JSON fixture
@@ -21,20 +31,25 @@ def remoteDuplicateInput : CellInput 4 :=
     tetrahedra := fun i a r =>
       if i = 1 then recordVertex 0 a r + 3 * recordPeriod 1 r else recordVertex i a r }
 
-private def recordInputCell (input : CellInput 4) : IntegerCell 4 :=
+def recordInputCell (input : CellInput 4) : IntegerCell 4 :=
   input.toIntegerCell !![84132, 297648, -164376; -200448, 27648, 317952; 274176, -202752, 59904]
     172191744
     [![1, 1, 1], ![1, -5, 1], ![1, 1, -5], ![5, -1, -1], ![1, 1, -1],
       ![1, -1, -3], ![1, -1, 1], ![1, -1, -1], ![1, 3, -1], ![3, -1, 1]]
 
+set_option maxRecDepth 20000 in
 theorem publishedInput_json :
     publishedInput.canonicalJson = include_str "../benchmarks/ceg.json" := by decide +kernel
 
+set_option maxRecDepth 20000 in
 theorem remoteDuplicateInput_json :
     remoteDuplicateInput.canonicalJson = include_str "../benchmarks/ceg-remote-duplicate.json" := by
   decide +kernel
 
-example : publishedInput.canonicalJson ≠ remoteDuplicateInput.canonicalJson := by decide +kernel
+set_option maxRecDepth 20000 in
+example : publishedInput.canonicalJson ≠ remoteDuplicateInput.canonicalJson := by
+  rw [publishedInput_json, remoteDuplicateInput_json]
+  decide +kernel
 
 example :
     let g := recordInputCell publishedInput

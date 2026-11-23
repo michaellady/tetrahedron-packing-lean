@@ -1,13 +1,17 @@
-import TetrahedronPacking.IntegerCertificate
-import Mathlib.Algebra.Module.ZLattice.Basic
-import Mathlib.Data.Matrix.Notation
-import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
-import Mathlib.LinearAlgebra.Matrix.ToLin
-import Mathlib.Topology.Algebra.Module.FiniteDimension
-import Mathlib.Tactic.FinCases
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Ring
+module
+
+public import TetrahedronPacking.IntegerCertificate
+public import Mathlib.Algebra.Module.ZLattice.Basic
+public import Mathlib.LinearAlgebra.Matrix.Notation
+public import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
+public import Mathlib.LinearAlgebra.Matrix.ToLin
+public import Mathlib.Topology.Algebra.Module.FiniteDimension
+public import Mathlib.Tactic.FinCases
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 /-!
 # The published packing in real space
@@ -26,10 +30,10 @@ open MeasureTheory
 
 attribute [local simp] Matrix.cons_val_two Matrix.cons_val_three Matrix.vecHead Matrix.vecTail
 
-private def periodMatrix : Matrix (Fin 3) (Fin 3) ℝ :=
+def periodMatrix : Matrix (Fin 3) (Fin 3) ℝ :=
   fun i j => (recordPeriod j i : ℝ)
 
-private noncomputable def inverseMatrix : Matrix (Fin 3) (Fin 3) ℝ :=
+noncomputable def inverseMatrix : Matrix (Fin 3) (Fin 3) ℝ :=
   (172191744 : ℝ)⁻¹ •
     !![84132, 297648, -164376;
       -200448, 27648, 317952;
@@ -40,13 +44,13 @@ example : periodMatrix 0 1 = 90 ∧ periodMatrix 0 1 ≠ 576 := by
 example : inverseMatrix 0 0 = 84132 / 172191744 ∧ inverseMatrix 0 0 ≠ 0 := by
   norm_num [inverseMatrix, div_eq_mul_inv, mul_comm]
 
-private theorem period_mul_inverse : periodMatrix * inverseMatrix = 1 := by
+theorem period_mul_inverse : periodMatrix * inverseMatrix = 1 := by
   ext i j
   fin_cases i <;> fin_cases j <;>
     norm_num [Matrix.mul_apply, Fin.sum_univ_three, Matrix.one_apply,
       periodMatrix, inverseMatrix, recordPeriod]
 
-private theorem inverse_mul_period : inverseMatrix * periodMatrix = 1 := by
+theorem inverse_mul_period : inverseMatrix * periodMatrix = 1 := by
   ext i j
   fin_cases i <;> fin_cases j <;>
     norm_num [Matrix.mul_apply, Fin.sum_univ_three, Matrix.one_apply,
@@ -58,6 +62,9 @@ private theorem period_determinant : periodMatrix.det = 172191744 := by
 /-- World to lattice coordinates, in the integer-scaled copy of the packing. -/
 noncomputable def recordCoordinates : (Fin 3 → ℝ) ≃ₗ[ℝ] (Fin 3 → ℝ) :=
   Matrix.toLin'OfInv period_mul_inverse inverse_mul_period
+
+theorem recordCoordinates_symm_apply (x : Fin 3 → ℝ) (r : Fin 3) :
+    recordCoordinates.symm x r = ∑ j : Fin 3, (recordPeriod j r : ℝ) * x j := rfl
 
 /-- The real vertices, still in the uniform integer scale. -/
 def recordRealVertex (i a : Fin 4) (j : Fin 3) : ℝ :=
@@ -186,7 +193,7 @@ theorem record_pairwise_disjoint_interiors :
   have translate_hull (v : Fin 4 → Fin 3 → ℝ) :
       e '' convexHull ℝ (range v) =
         convexHull ℝ (range fun b => v b + recordCoordinates.symm (fun r => (k r : ℝ))) := by
-    simpa only [← range_comp] using
+    simpa [e, ← range_comp, Function.comp_def, add_comm] using
       AffineMap.image_convexHull
         (AffineEquiv.vaddConst ℝ (recordCoordinates.symm (fun r => (k r : ℝ)))).toAffineMap
         (range v)

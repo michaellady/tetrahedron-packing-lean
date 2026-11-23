@@ -1,8 +1,12 @@
-import TetrahedronPacking.PeriodicDensity
-import TetrahedronPacking.RecordGeometry
-import TetrahedronPacking.SimplexVolume
-import Mathlib.Analysis.Convex.Topology
-import Mathlib.Tactic.NormNum
+module
+
+public import TetrahedronPacking.PeriodicDensity
+public import TetrahedronPacking.RecordGeometry
+public import TetrahedronPacking.SimplexVolume
+public import Mathlib.Analysis.Convex.Topology
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /-!
 # Spatial density of the Chen–Engel–Glotzer cell
@@ -66,7 +70,7 @@ theorem record_spatial_density :
     rw [translate, translate, hk, hl]
     exact h
   have hbounded : Bornology.IsBounded (⋃ i, s i) :=
-    Bornology.isBounded_iUnion.mpr fun i => (finite_range _).isCompact_convexHull.isBounded
+    Bornology.isBounded_iUnion.mpr fun i => ((finite_range (recordRealVertex i)).isCompact_convexHull ℝ).isBounded
   obtain ⟨d, hd_bound⟩ := hbounded.exists_norm_le
   have h := periodic_convex_density L s d (fun i => convex_convexHull ℝ _)
     (fun i x hx => hd_bound x (mem_iUnion.mpr ⟨i, hx⟩)) hd

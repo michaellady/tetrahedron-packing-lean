@@ -1,8 +1,12 @@
-import TetrahedronPacking.PeriodicSeparation
-import TetrahedronPacking.RecordArithmetic
-import Mathlib.Data.Int.Interval
-import Mathlib.Topology.Algebra.Module.FiniteDimension
-import Mathlib.Tactic.NormNum
+module
+
+public import TetrahedronPacking.PeriodicSeparation
+public import TetrahedronPacking.RecordArithmetic
+public import Mathlib.Data.Int.Interval
+public import Mathlib.Topology.Algebra.Module.FiniteDimension
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /-!
 # Transport a checked integer projection to real space
@@ -39,7 +43,6 @@ theorem integer_separator_plane
       · norm_num [hf_apply, Pi.single_apply, Fin.ext_iff]
       · norm_num [hf_apply, Pi.single_apply, Fin.ext_iff]
       · norm_num [hf_apply, Pi.single_apply, Fin.ext_iff]
-        rfl
     rw [hs] at hz
     exact hr (by exact_mod_cast hz)
   have hf_int (u : Fin 3 → ℤ) : f (fun j => (u j : ℝ)) = (integerDot n u : ℝ) := by

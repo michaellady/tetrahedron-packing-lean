@@ -1,4 +1,9 @@
-import TetrahedronPacking.CellDensity
+module
+
+public import TetrahedronPacking.CellDensity
+public import Mathlib.LinearAlgebra.Matrix.Notation
+
+@[expose] public section
 
 /-!
 A distinct one-piece cell tests the checker on the lattice packing of

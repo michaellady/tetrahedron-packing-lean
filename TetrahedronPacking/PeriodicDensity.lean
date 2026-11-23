@@ -1,7 +1,11 @@
-import TetrahedronPacking.PackingMeasure
-import Mathlib.Analysis.SpecificLimits.Basic
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
+module
+
+public import TetrahedronPacking.PackingMeasure
+public import Mathlib.Analysis.SpecificLimits.Basic
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 /-!
 # Density of a periodic convex packing
@@ -46,9 +50,9 @@ theorem periodic_convex_density
       volume.real (U R) = (Nat.card (B R ∩ L : Set (κ → ℝ)) : ℝ) * V ∧
         volume (U R) ≠ ∞ := by
     have hf : (B R ∩ L : Set (κ → ℝ)).Finite := by
-      apply Metric.finite_isBounded_inter_isClosed Metric.isBounded_closedBall
-      letI : DiscreteTopology L.toAddSubgroup := ‹DiscreteTopology L›
-      exact L.toAddSubgroup.isClosed_of_discrete
+      let : DiscreteTopology L.toAddSubgroup := ‹DiscreteTopology L›
+      exact Metric.finite_isBounded_inter_isClosed DiscreteTopology.isDiscrete
+        Metric.isBounded_closedBall L.toAddSubgroup.isClosed_of_discreteTopology
     let e : J R ≃ (B R ∩ L : Set (κ → ℝ)) :=
       { toFun := fun j => ⟨j.val.val, ⟨by simpa [B, Metric.mem_closedBall, dist_zero_right]
           using j.property, j.val.property⟩⟩
@@ -56,8 +60,8 @@ theorem periodic_convex_density
           by simpa [B, Metric.mem_closedBall, dist_zero_right] using x.property.1⟩
         left_inv := fun _ => rfl
         right_inv := fun _ => rfl }
-    letI := hf.fintype
-    letI : Fintype (J R) := Fintype.ofEquiv _ e.symm
+    let := hf.fintype
+    let : Fintype (J R) := Fintype.ofEquiv _ e.symm
     have hcard : Fintype.card (J R) = Nat.card (B R ∩ L : Set (κ → ℝ)) := by
       rw [← Nat.card_eq_fintype_card]
       exact Nat.card_congr e
@@ -104,7 +108,6 @@ theorem periodic_convex_density
     have hlim : (2 : ℝ) ^ n / ZLattice.covolume L * V / (2 : ℝ) ^ n =
         V / ZLattice.covolume L := by
       field_simp [hp, hcov]
-      ring
     rw [hlim] at ht
     refine ht.congr' ?_
     filter_upwards [eventually_gt_atTop (max 0 (-a))] with R hR
@@ -114,7 +117,6 @@ theorem periodic_convex_density
       ((R + a) / R) ^ n * V / (2 : ℝ) ^ n = volume.real (U (R + a)) / volume.real (B R)
     rw [(hU (R + a)).1, hbvol R hR₀.le, div_pow]
     field_simp [hR₀.ne', ha, hp]
-    exact Or.inl (mul_comm _ _)
   refine tendsto_of_tendsto_of_tendsto_of_le_of_le' (hside (-d)) (hside d) ?_ ?_
   · apply Eventually.of_forall
     intro R
@@ -122,7 +124,9 @@ theorem periodic_convex_density
     have hfin : volume (C ∩ B R) ≠ ∞ :=
       ne_top_of_le_ne_top (hB R) (measure_mono inter_subset_right)
     apply div_le_div_of_nonneg_right _ measureReal_nonneg
-    exact measureReal_mono (by simpa only [sub_eq_add_neg] using h) hfin
+    apply measureReal_mono _ hfin
+    rw [← sub_eq_add_neg]
+    exact h
   · apply Eventually.of_forall
     intro R
     apply div_le_div_of_nonneg_right _ measureReal_nonneg

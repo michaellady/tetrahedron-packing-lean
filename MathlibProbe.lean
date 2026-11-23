@@ -1,9 +1,13 @@
-import Mathlib.Algebra.Module.ZLattice.Covolume
-import Mathlib.Analysis.Convex.Combination
-import Mathlib.Analysis.Normed.Affine.AddTorsorBases
-import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
-import Mathlib.MeasureTheory.Group.FundamentalDomain
-import Mathlib.LinearAlgebra.CrossProduct
+module
+
+public import Mathlib.Algebra.Module.ZLattice.Covolume
+public import Mathlib.Analysis.Convex.Combination
+public import Mathlib.Analysis.Normed.Affine.AddTorsorBases
+public import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
+public import Mathlib.MeasureTheory.Group.FundamentalDomain
+public import Mathlib.LinearAlgebra.CrossProduct
+
+@[expose] public section
 
 -- Verify the Mathlib declarations available for a periodic packing certificate.
 #check Finset.convexHull_eq

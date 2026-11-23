@@ -1,3 +1,5 @@
-import TetrahedronPacking.RecordDensity
-import TetrahedronPacking.CellImprovement
-import TetrahedronPacking.RestrictedDeterminant
+module
+
+public import TetrahedronPacking.RecordDensity
+public import TetrahedronPacking.CellImprovement
+public import TetrahedronPacking.RestrictedDeterminant

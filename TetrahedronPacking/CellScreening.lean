@@ -1,4 +1,9 @@
-import TetrahedronPacking.CellDensity
+module
+
+public import TetrahedronPacking.CellDensity
+public import Mathlib.LinearAlgebra.Matrix.Notation
+
+@[expose] public section
 
 /-!
 # Density screening for regular tetrahedron cells
@@ -78,7 +83,7 @@ theorem regular_record_screen {m : ℕ} (g : IntegerCell m) (s : ℤ)
         nlinarith [sq_nonneg (d j - d i)]
       have hs : g.volumeNumerator = (m : ℤ) * d i := by
         change (∑ j, d j) = _
-        simp [he, Finset.sum_const, nsmul_eq_mul]
+        simp [he, Finset.sum_const]
       rw [hs]
       linear_combination (m : ℤ) ^ 2 * hd i
   have hleft : 0 ≤ 4000 * (6 * |g.periods.det|) := by positivity

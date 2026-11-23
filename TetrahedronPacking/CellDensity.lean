@@ -1,7 +1,11 @@
-import TetrahedronPacking.CellChecker
-import TetrahedronPacking.PeriodicDensity
-import TetrahedronPacking.SimplexVolume
-import Mathlib.Analysis.Convex.Topology
+module
+
+public import TetrahedronPacking.CellChecker
+public import TetrahedronPacking.PeriodicDensity
+public import TetrahedronPacking.SimplexVolume
+public import Mathlib.Analysis.Convex.Topology
+
+@[expose] public section
 
 /-!
 # Density of a checked periodic cell
@@ -23,7 +27,7 @@ def piece {m : ℕ} (g : IntegerCell m) (i : Fin m) : Set (Fin 3 → ℝ) :=
   convexHull ℝ (range (g.realVertex i))
 
 noncomputable def basis {m : ℕ} (g : IntegerCell m) (h : g.inverseValid) :
-    Basis (Fin 3) ℝ (Fin 3 → ℝ) :=
+    Module.Basis (Fin 3) ℝ (Fin 3 → ℝ) :=
   (Pi.basisFun ℝ (Fin 3)).map (g.chart h).symm
 
 def edgeMatrix {m : ℕ} (g : IntegerCell m) (i : Fin m) : Matrix (Fin 3) (Fin 3) ℤ :=
@@ -112,12 +116,13 @@ theorem pairwise_disjoint_of_checks {m : ℕ} (g : IntegerCell m) (h : g.inverse
     simp only [Function.comp_def, add_comm]
   have e_hull (v : Fin 4 → Fin 3 → ℝ) :
       e '' convexHull ℝ (range v) = convexHull ℝ (range fun a => v a + (p.2 : Fin 3 → ℝ)) := by
-    simpa only [← range_comp] using
+    simpa [e, ← range_comp, Function.comp_def, add_comm] using
       AffineMap.image_convexHull (AffineEquiv.vaddConst ℝ (p.2 : Fin 3 → ℝ)).toAffineMap (range v)
   simp only [e.image_interior, e_hull, shift_eq, map_sub] at hdisj
   rw [translate, translate, hl]
   rw [hk] at hdisj ⊢
-  simpa only [realVertex, add_assoc, sub_add_cancel] using hdisj
+  unfold realVertex
+  simpa only [add_assoc, sub_add_cancel] using hdisj
 
 theorem spatial_density_of_checks {m : ℕ} (g : IntegerCell m) (h : g.inverseValid)
     (checks : ∀ i j, g.checkPair i j = true) :
@@ -128,7 +133,7 @@ theorem spatial_density_of_checks {m : ℕ} (g : IntegerCell m) (h : g.inverseVa
       atTop (𝓝 ((g.volumeNumerator : ℝ) / (6 * (|g.periods.det| : ℤ)))) := by
   let L := Submodule.span ℤ (range (g.basis h))
   have hb : Bornology.IsBounded (⋃ i, g.piece i) :=
-    Bornology.isBounded_iUnion.mpr fun i => (finite_range _).isCompact_convexHull.isBounded
+    Bornology.isBounded_iUnion.mpr fun i => ((finite_range (g.realVertex i)).isCompact_convexHull ℝ).isBounded
   obtain ⟨d, hd⟩ := hb.exists_norm_le
   have ht := periodic_convex_density L g.piece d (fun _ => convex_convexHull ℝ _)
     (fun i x hx => hd x (mem_iUnion.mpr ⟨i, hx⟩)) (g.pairwise_disjoint_of_checks h checks)

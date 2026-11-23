@@ -1,5 +1,9 @@
-import Mathlib.Algebra.Module.ZLattice.Covolume
-import Mathlib.Analysis.Convex.Measure
+module
+
+public import Mathlib.Algebra.Module.ZLattice.Covolume
+public import Mathlib.Analysis.Convex.Measure
+
+@[expose] public section
 
 /-!
 # Volume of an interior-disjoint union of convex pieces
@@ -25,7 +29,7 @@ theorem measure_iUnion_of_disjoint_convex_interiors
     interior_ae_eq_of_null_frontier ((hc i).addHaar_frontier μ)
   calc
     μ (⋃ i, s i) = μ (⋃ i, interior (s i)) :=
-      (measure_congr (EventuallyEq.countable_iUnion heq)).symm
+      (measure_congr (EventuallyEqSet.countable_iUnion heq)).symm
     _ = ∑' i, μ (interior (s i)) :=
       measure_iUnion hd (fun _ => isOpen_interior.measurableSet)
     _ = ∑' i, μ (s i) := tsum_congr (fun i => measure_congr (heq i))
@@ -80,7 +84,7 @@ theorem lattice_count_in_coordinate_cubes
       {x : κ → ℝ | x ∈ (univ : Set (κ → ℝ)) ∧ ‖x‖ ^ n ≤ R ^ n} =
         Metric.closedBall 0 R := by
     ext x
-    simp only [mem_setOf_eq, mem_univ, true_and, Metric.mem_closedBall, dist_zero_right]
+    simp only [mem_ofPred_eq, mem_univ, true_and, Metric.mem_closedBall, dist_zero_right]
     exact pow_le_pow_iff_left₀ (norm_nonneg x) hR hn
   have hball_one : {x : κ → ℝ | x ∈ (univ : Set (κ → ℝ)) ∧ ‖x‖ ^ n ≤ 1} =
       Metric.closedBall 0 1 := by simpa using hball 1 zero_le_one

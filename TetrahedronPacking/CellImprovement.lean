@@ -1,4 +1,8 @@
-import TetrahedronPacking.CellDensity
+module
+
+public import TetrahedronPacking.CellDensity
+
+@[expose] public section
 
 /-!
 # A conditional record-improvement certificate

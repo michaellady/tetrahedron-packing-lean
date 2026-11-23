@@ -1,13 +1,17 @@
-import TetrahedronPacking.PackingMeasure
-import Mathlib.Analysis.Convex.Combination
-import Mathlib.Data.Fin.Tuple.Sort
-import Mathlib.Data.Matrix.Notation
-import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
-import Mathlib.LinearAlgebra.Determinant
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.FinCases
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Ring
+module
+
+public import TetrahedronPacking.PackingMeasure
+public import Mathlib.Analysis.Convex.Combination
+public import Mathlib.Data.Fin.Tuple.Sort
+public import Mathlib.LinearAlgebra.Matrix.Notation
+public import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
+public import Mathlib.LinearAlgebra.Determinant
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.FinCases
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 /-!
 # Lebesgue volume of a tetrahedron from its edge determinant
@@ -37,7 +41,7 @@ example : (-1 : Fin 3 → ℝ) ∉ orderedCube (Equiv.refl _) := by
 private theorem orderedCube_measurable {n : ℕ} (σ : Equiv.Perm (Fin n)) :
     MeasurableSet (orderedCube σ) := by
   refine measurableSet_Icc.inter ?_
-  simp only [Monotone, Function.comp_apply, setOf_forall]
+  simp only [Monotone, Function.comp_apply, ofPred_forall]
   exact MeasurableSet.iInter (fun i => MeasurableSet.iInter (fun j =>
     MeasurableSet.iInter fun _ => measurableSet_le (measurable_pi_apply (σ i))
       (measurable_pi_apply (σ j))))
@@ -157,8 +161,7 @@ theorem tetrahedron_volume (v : Fin 4 → Fin 3 → ℝ) :
   let f := Matrix.toLin' M
   have hv (i : Fin 4) : v 0 + f (t i) = v i := by
     ext r
-    fin_cases i <;> simp [f, M, Matrix.toLin'_apply, Matrix.mulVec, dotProduct,
-      Fin.sum_univ_three, t]
+    fin_cases i <;> simp [f, M, Matrix.toLin'_apply, t]
   have hvset : v 0 +ᵥ (f '' range t) = range v := by
     ext x
     simp only [mem_vadd_set, mem_image, mem_range, vadd_eq_add]

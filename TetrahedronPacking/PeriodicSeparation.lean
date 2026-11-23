@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Convex.Basic
-import Mathlib.Analysis.Convex.Hull
-import Mathlib.Analysis.Normed.Operator.Banach
+module
+
+public import Mathlib.Analysis.Convex.Basic
+public import Mathlib.Analysis.Convex.Hull
+public import Mathlib.Analysis.Normed.Operator.Banach
+
+@[expose] public section
 
 /-!
 # Certifying all translates of a finite motif
@@ -97,10 +101,10 @@ theorem shift_bounds_of_hulls_intersect
     simp [f]
   have hW₁ := hull_ge (f := f) (a := loW j + k j) (fun i => by
     rw [hshift]
-    exact add_le_add_right (hw i j).1 _) hx'
+    exact add_le_add_left (hw i j).1 _) hx'
   have hW₂ := hull_le (f := f) (a := hiW j + k j) (fun i => by
     rw [hshift]
-    exact add_le_add_right (hw i j).2 _) hx'
+    exact add_le_add_left (hw i j).2 _) hx'
   constructor <;> linarith
 
 /-- A certificate of interior disjointness for every integer shift. For a
@@ -121,7 +125,7 @@ theorem disjoint_interiors_of_bounded_shift_certificates
       Disjoint (interior (convexHull ℝ (range v)))
         (interior (convexHull ℝ (range (fun i => w i + C.symm (fun j => (k j : ℝ)))))) := by
   intro k hk
-  by_contra! hoverlap
+  by_contra hoverlap
   obtain ⟨x, hx, hx'⟩ := Set.not_disjoint_iff.mp hoverlap
   have h := shift_bounds_of_hulls_intersect C v w k loV hiV loW hiW hv hw
     (interior_subset hx) (interior_subset hx')

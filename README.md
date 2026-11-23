@@ -6,7 +6,7 @@ This project verifies the density of the periodic packing of congruent regular t
 
 ## Verify the proof
 
-With [Elan](https://github.com/leanprover/elan) installed, run these commands from the repository root. The project pins Lean 4.19.0 and a Mathlib commit.
+With [Elan](https://github.com/leanprover/elan) installed, run these commands from the repository root. The project pins Lean 4.36.0 and a Mathlib commit.
 
 ```sh
 lake exe cache get
@@ -17,6 +17,18 @@ The build prints the theorem's axiom dependencies.
 
 ```text
 'TetrahedronPacking.record_spatial_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+The [registry statement](Challenge.lean) specifies the published coordinates,
+their common edge length, pairwise interior disjointness, and the density
+limit. The [solution](Solution.lean) links that statement to the existing
+packing proof. The Challenge contains a statement stub for Comparator and
+the Solution builds independently of it.
+
+With Bubblewrap installed, run the comparison from the repository root.
+
+```sh
+PATH="$(lean --print-prefix)/bin:$PATH" lake comparator
 ```
 
 ## Explore the proofs

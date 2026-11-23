@@ -1,0 +1,69 @@
+version: "v0.4"
+
+project:
+  name: "The Chen–Engel–Glotzer regular tetrahedron packing"
+  description: >-
+    A Lean verification of the published periodic packing of congruent regular
+    tetrahedra. The explicit four-piece motif has a common edge length, all of
+    its periodic copies have disjoint interiors, and the covered volume fraction
+    in expanding origin-centered coordinate cubes tends to 4000/4671.
+  authors:
+    - name: "Mike Lady"
+      github: "michaellady"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - name: "Mike Lady"
+      github: "michaellady"
+
+classification:
+  arxiv: ["math.MG"]
+  msc2020: ["52C17", "68V15"]
+
+sources:
+  - title: "Dense crystalline dimer packings of regular tetrahedra"
+    authors: ["Elizabeth R. Chen", "Michael Engel", "Sharon C. Glotzer"]
+    id: "arXiv:1001.0586v3"
+    type: "article"
+    location: "https://arxiv.org/abs/1001.0586v3"
+    relationship: "independently-proves"
+    note: "Definition 2 and Theorem 1, equations (15)–(16)."
+
+status:
+  scope: >-
+    Verifies edge lengths, periodic interior disjointness, and the spatial
+    density of the published construction. The proof concerns expanding
+    coordinate cubes. The unrestricted optimum, space group, and dimer
+    transitivity are outside the theorem.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: []
+      framework: "OpenAI Codex"
+      tool_setup: "Lean, Mathlib, exact arithmetic replays, and Comparator."
+  spend_usd: "not tracked"
+  notes: "AI-assisted implementation under user direction. Converge prompted additional automated reviews."
+
+fidelity:
+  divergences: >-
+    All coordinates are multiplied by 160. The Lean statement verifies the
+    packing and density portion of Theorem 1 with a direct exact certificate.
+
+review:
+  status: "self-assessed"
+  reviewers: []
+  notes: "Locally checked with Lean and NanoDa through Comparator. See REVIEW.md for the earlier automated reviews of the extension and benchmark."
+
+alignment:
+  namespace: "PackingCertificate"
+  statements:
+    - source: "Definition 2 and the packing and density portion of Theorem 1"
+      lean: "PackingCertificate.packing_density"
+      module: "Solution"
+      status: "proved"
+      note: "The covered-volume limit is stated directly over the infinite periodic union."
+
+acknowledgements: "Chen, Engel and Glotzer for the construction, and the Lean and Mathlib contributors for the verification tools."

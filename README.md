@@ -35,3 +35,5 @@ python3 restricted_probe.py
 ```
 
 The [research report](REPORT.md) documents the prior-art search, the scope of the formal results, and the benchmarks.
+
+The [simulation benchmark](benchmarks/README.md) provides exact periodic-cell coordinates and an overlap control as JSON.

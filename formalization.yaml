@@ -8,12 +8,10 @@ project:
     its periodic copies have disjoint interiors, and the covered volume fraction
     in expanding origin-centered coordinate cubes tends to 4000/4671.
   authors:
-    - name: "Mike Lady"
-      github: "michaellady"
+    - "Mike Lady (GitHub: michaellady)"
   license: "Apache-2.0"
   responsible_maintainers:
-    - name: "Mike Lady"
-      github: "michaellady"
+    - "Mike Lady (GitHub: michaellady)"
 
 classification:
   arxiv: ["math.MG"]

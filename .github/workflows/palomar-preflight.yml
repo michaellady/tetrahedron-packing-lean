@@ -1,7 +1,8 @@
 name: Palomar preflight
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [palomar-preflight]
 
 permissions:
   contents: read

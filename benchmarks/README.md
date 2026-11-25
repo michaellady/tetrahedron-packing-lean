@@ -250,8 +250,9 @@ python3 -m benchmarks.rounded_hoomd "$work/tetrahedra-table.txt"
 
 These are observed HOOMD-blue 7.2.2 CPU counts with zero trial moves.
 At the intermediate radius, the exact reconstruction predicts overlapping
-dimer interiors and disjoint approximant interiors. The approximant count
-shows that the exact distinction did not survive this combined coordinate
-conversion and reduced-precision overlap check. The benchmark leaves the
-contributions of conversion and overlap arithmetic unresolved.
+dimer interiors and disjoint approximant interiors. Reinterpreting the
+binary host box factors, positions, and local shape vertices as exact
+rationals gives the same distinction. The two approximant overlaps enter
+downstream of that representation. The benchmark does not identify the
+internal conversion or arithmetic step responsible for the difference.
 [HOOMD-blue rounded-particle model](https://hoomd-blue.readthedocs.io/en/stable/hoomd/hpmc/integrate/convexspheropolyhedron.html)

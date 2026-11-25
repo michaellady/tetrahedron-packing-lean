@@ -8,9 +8,9 @@ from pathlib import Path
 import hoomd
 
 from benchmarks.approximant import cell as approximant_cell, read_table
-from benchmarks.clearance import expand, rounding_radius_squared
+from benchmarks.clearance import dimer_rounding_upper_squared, expand, rounding_radius_squared
 from benchmarks.write_gsd import triclinic_geometry
-from replay import ceg_cell, det, dot, sub
+from replay import add, ceg_cell, det, dot, sub
 
 
 def prepare(lattice, pieces):
@@ -44,6 +44,32 @@ def count_overlaps(snapshot, shapes, radius):
     return integrator.overlaps
 
 
+def binary_input_geometry(snapshot, shapes):
+    """Interpret the host box factors, positions and shape coordinates as exact rationals."""
+    lx, ly, lz, xy, xz, yz = (Fraction(float(x)) for x in snapshot.configuration.box)
+    periods = ((lx, 0, 0), (xy * ly, ly, 0), (xz * lz, yz * lz, lz))
+    pieces = []
+    for position, shape in zip(snapshot.particles.position, shapes, strict=True):
+        center = tuple(Fraction(float(x)) for x in position)
+        pieces.append(tuple(add(center, tuple(map(Fraction, v))) for v in shape))
+    return periods, tuple(pieces)
+
+
+def check_binary_input(dimer, approximant, radius):
+    squared = Fraction(radius)**2
+    _, dimer_pieces = binary_input_geometry(*dimer[:2])
+    edge = sub(dimer_pieces[0][0], dimer_pieces[0][1])
+    dimer_upper = dimer_rounding_upper_squared(dimer_pieces) * dot(edge, edge)
+    approximant_lower, _ = rounding_radius_squared(
+        *binary_input_geometry(*approximant[:2]), Fraction(1, 100)
+    )
+    if approximant_lower is None:
+        raise ValueError("No separation certificate for the binary approximant input")
+    print("Exact rational check of the binary host inputs at the intermediate radius", flush=True)
+    print(f"  dimer overlap witness: {dimer_upper < squared}", flush=True)
+    print(f"  approximant nonoverlap certificate: {squared <= approximant_lower}", flush=True)
+
+
 def main():
     parser = ArgumentParser(description=__doc__)
     parser.add_argument("table", type=Path, help="pdftotext -f 25 -l 26 -layout output")
@@ -61,6 +87,7 @@ def main():
         ):
             overlaps = count_overlaps(snapshot, shapes, radius)
             print(f"{name}, {label}, radius {radius:.12g}: {overlaps} overlaps", flush=True)
+    check_binary_input(dimer, approximant, between)
 
 
 if __name__ == "__main__":

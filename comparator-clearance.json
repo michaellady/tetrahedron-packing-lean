@@ -1,0 +1,17 @@
+{
+  "challenge_module": "ClearanceChallenge",
+  "solution_module": "ClearanceSolution",
+  "theorem_names": [
+    "TetrahedronPacking.DimerClearance.pairwise_disjoint_near_reference"
+  ],
+  "definition_names": [
+    "TetrahedronPacking.DimerClearance.fractions",
+    "TetrahedronPacking.DimerClearance.reference"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

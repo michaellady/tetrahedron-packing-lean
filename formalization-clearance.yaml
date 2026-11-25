@@ -1,0 +1,68 @@
+version: "v0.4"
+
+project:
+  name: "Periodic clearance for the expanded Chen–Engel–Glotzer dimer cell"
+  description: >-
+    Lean verifies that all periodic images of an expanded four-tetrahedron
+    dimer motif have pairwise disjoint interiors under a fractional vertex
+    error of at most 77892/10^9 in each coordinate. The proof checks
+    exact integer projection gaps for every potentially intersecting
+    shift and transfers the result through the actual invertible cell basis.
+  authors: ["Mike Lady (GitHub: michaellady)"]
+  responsible_maintainers: ["Mike Lady (GitHub: michaellady)"]
+  license: "Apache-2.0"
+
+classification:
+  arxiv: ["math.MG"]
+  msc2020: ["52C17", "68V15"]
+
+sources:
+  - title: "Dense crystalline dimer packings of regular tetrahedra"
+    authors: ["Elizabeth R. Chen", "Michael Engel", "Sharon C. Glotzer"]
+    id: "arXiv:1001.0586v3"
+    type: "article"
+    location: "https://arxiv.org/abs/1001.0586v3"
+    relationship: "adapts"
+    note: "Definition 2 and Theorem 1, equations (15)–(16), supply the nominal motif."
+
+status:
+  scope: >-
+    Checks the embedded rational fractional vertices and the error bound
+    for the expanded four-particle cell. Reconstruction of those coordinates
+    from the paper is a separate exact-arithmetic replay. The rounded-particle
+    comparison and second cell in the source project are outside this entry.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: []
+      framework: "OpenAI Codex"
+      tool_setup: "Lean, Mathlib, and Python exact-arithmetic certificate generation."
+  spend_usd: "not tracked"
+  notes: "AI-assisted implementation under human direction with independent automated reviews."
+
+fidelity:
+  divergences: >-
+    The CEG period and particle-centroid coordinates are scaled by 1001/1000
+    while the particle shapes remain fixed. This derived cell supports a
+    clearance statement for any invertible basis whose actual fractional
+    vertices satisfy the error bound against the reconstructed reference.
+
+review:
+  status: "self-assessed"
+  reviewers: []
+  notes: "Two independent automated reviews audited the corresponding theorem and benchmark."
+
+alignment:
+  namespace: "TetrahedronPacking.DimerClearance"
+  statements:
+    - source: "Expanded rational reconstruction of the CEG four-piece motif"
+      lean: "TetrahedronPacking.DimerClearance.pairwise_disjoint_near_reference"
+      module: "ClearanceSolution"
+      status: "proved"
+      note: "The statement uses the embedded rational reference vertices."
+
+acknowledgements: "Chen, Engel and Glotzer for the periodic construction, and the Lean and Mathlib contributors for verification tools."

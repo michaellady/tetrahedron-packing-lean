@@ -3,3 +3,4 @@ module
 public import TetrahedronPacking.RecordDensity
 public import TetrahedronPacking.CellImprovement
 public import TetrahedronPacking.RestrictedDeterminant
+public import TetrahedronPacking.ClearanceCertificate

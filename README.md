@@ -49,3 +49,14 @@ python3 restricted_probe.py
 The [research report](REPORT.md) documents the prior-art search, the scope of the formal results, and the benchmarks.
 
 The [simulation benchmark](benchmarks/README.md) provides exact periodic-cell coordinates and an overlap control as JSON.
+
+## Clearance certificate
+
+The separate Comparator entry `comparator-clearance.json` verifies that
+the expanded four-particle dimer cell remains nonoverlapping under a
+coordinatewise fractional vertex error of at most `77892/10^9`. The proof
+checks a finite table of integer support gaps and quantization bounds.
+It compares the embedded rational reference with any perturbed fractional
+vertices in an invertible cell basis. The source branch also records a
+checked 82-particle example and the exact-arithmetic comparison with
+HOOMD-blue. [Source and reproduction](https://github.com/michaellady/tetrahedron-packing-lean/tree/acead5a7dfe61c0037f807d42836f2c58b2a5318)

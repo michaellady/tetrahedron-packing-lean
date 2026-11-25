@@ -179,8 +179,6 @@ def emit_lean(path, pieces, scale_unit, radius, namespace):
         defs.extend(lean_index_table(f"axes{i}", entry_type, ["[" + entry + "]" for entry in pairs],
                                      private=True))
         defs.extend([
-            *(["set_option maxRecDepth 4096 in", "set_option maxHeartbeats 800000 in"]
-              if count > 32 else []),
             f"private theorem checked{i} : ∀ j : Fin {count},",
             f"    checkClearancePair (vertices {i}) (vertices j) {scale_unit} {2 * radius}",
             f"      (decide (({i} : Fin {count}) = j)) (axes{i} j) = true := by decide +kernel",
@@ -270,16 +268,18 @@ def write_lean_sources(path, data, rows, results, namespace):
     data_path = write_module(namespace + "Data", [
         *(line.removeprefix("private ") for line in data), end
     ])
+    # High-index entries of the finite vectors take more kernel reductions.
+    options = ["set_option maxRecDepth 4096", "set_option maxHeartbeats 800000", ""]
     witness_paths = []
     for i in range(0, len(rows), 4):
         witness_paths.append(write_module(f"{namespace}Witnesses{i // 4}", [
-            f"import {data_path.stem}", "", f"namespace TetrahedronPacking.{namespace}", "",
+            f"import {data_path.stem}", "", *options, f"namespace TetrahedronPacking.{namespace}", "",
             *(line.removeprefix("private ") for row in rows[i:i + 4] for line in row),
             end,
         ]))
     path.write_text("\n".join([
         *(f"import {module.stem}" for module in witness_paths),
-        "", f"namespace TetrahedronPacking.{namespace}", "", "open Set", "", *results,
+        "", *options, f"namespace TetrahedronPacking.{namespace}", "", "open Set", "", *results,
     ]), encoding="utf-8")
     return [data_path], witness_paths, path
 
@@ -290,7 +290,7 @@ def check_lean_sources(sources, jobs):
     lean_env = os.environ.copy()
     lean_path = subprocess.check_output(["lake", "env", "printenv", "LEAN_PATH"], text=True).strip()
     directory = endpoint.resolve().parent
-    lean_env["LEAN_PATH"] = os.pathsep.join([str(directory), lean_path])
+    lean_env["LEAN_PATH"] = os.pathsep.join([lean_path, str(directory)])
 
     def check(source):
         cmd = ["lean", "-j1", "-R", str(directory), "-o", str(source.with_suffix(".olean")),

@@ -210,8 +210,10 @@ checks one witness per required shift. The generated Lean files use
 `disjoint_near_reference` for the rational vertices. Lean checks the
 quantization bound between them and deducts one grid unit from the budget.
 `pairwise_disjoint_near_reference` compares copies at arbitrary lattice
-indices. The [checked dimer certificate](generated/DimerClearance.lean)
-allows fractional vertex error at most `77892/1000000000`.
+indices. Lean verified fractional vertex errors up to `77892/1000000000`
+for the [expanded dimer](generated/DimerClearance.lean) and
+`40133/1000000000` for the expanded 82-particle reconstruction. The latter
+uses 3,536 oriented shift witnesses. [Axiom and replay output](clearance_verification.txt)
 Reproducing the coordinates from the primary sources still uses the Python
 reconstruction. The period is part of the geometry, and the finite search
 boxes include candidate shifts created by perturbations.

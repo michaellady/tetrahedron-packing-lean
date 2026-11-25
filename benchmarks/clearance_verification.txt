@@ -1,0 +1,58 @@
+Lean 4.19.0. Mathlib c44e0c8ee63ca166450922a373c7409c5d26b00b.
+Sources: Chen–Engel–Glotzer arXiv:1001.0586v3 equations (15)–(16);
+Haji-Akbari et al. arXiv:1012.5138v1 supplementary table, PDF pages 25–26.
+Supplement PDF SHA-256: 56be93178c3d9944f55e0e664b46e8750b0500545bc88826d9f67c96a286f433
+
+Exact replay with expansion 1001/1000 and rounding search radius 1/100
+dimer controls: zero nominal margin; exact shared interior point after compression
+dimer: 154 shifts, limiting pair (0, 1, (0, 0, 0)), exact fractional bound 40/513513
+  approximate bounds: fractional 7.78948147369e-05, fixed-cell Cartesian 0.000153644938924 in source units
+  rounding guaranteed for (radius / particle edge)² up to 1/24000000; limiting pair (0, 1, (0, 0, 0))
+  exact rounding threshold: the witness gives overlap for any larger radius
+approximant: 1815 shifts, limiting pair (53, 71, (0, 0, 0)), exact fractional bound 208255803842164590659151636341670178329272988307309/5188755134763791494966128993785141912591236963566946068
+  approximate bounds: fractional 4.01359860763e-05, fixed-cell Cartesian 0.000103320388324 in source units
+  rounding guaranteed for (radius / particle edge)² up to 10001683419516624764884240903405327875406573982308949600306935492079669962421926745378966869803802609/240000289634789689244000528387839145191093423891182810704127549032544492144068668800000000000000000000000000; limiting pair (5, 8, (0, -1, 0))
+  exact rounding threshold: the witness gives overlap for any larger radius
+approximant's guaranteed squared rounding radius exceeds the dimer's upper bound
+  ratio is approximately 1.00016713494
+
+Kernel check of generated DimerClearance.lean
+'TetrahedronPacking.DimerClearance.quantization_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TetrahedronPacking.DimerClearance.disjoint_within_clearance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TetrahedronPacking.DimerClearance.disjoint_near_reference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TetrahedronPacking.DimerClearance.pairwise_disjoint_near_reference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+Kernel check of generated ApproximantClearance.lean
+All 21 witness modules accepted. The first 17 were checked using smaller per-declaration
+limits. Their theorem and proof text is identical to the final generated modules.
+The final four were rechecked after increasing the recursion limit for the high-index
+coordinate checks. The endpoint consumed all 21 compiled modules.
+'TetrahedronPacking.ApproximantClearance.quantization_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TetrahedronPacking.ApproximantClearance.disjoint_within_clearance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TetrahedronPacking.ApproximantClearance.disjoint_near_reference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TetrahedronPacking.ApproximantClearance.pairwise_disjoint_near_reference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+Theorem source SHA-256
+c38b92ad6ac1ff6f07709275ca9137987dae328de103244f27cb663a61796e96  DimerClearance.lean
+ba17dd8ce4b473cafb916c7e59c8c52701668eb77f256525b6ca702116fa925d  ApproximantClearanceData.lean
+abdd8573ad22d7224b6a5e34e7fcba5df1a97c9c8f68321f6f32affc06ab2974  ApproximantClearance.lean
+
+HOOMD-blue 7.2.2 CPU overlap counts and exact binary host recheck
+HOOMD-blue 7.2.2 CPU, zero trial moves
+dimer, 95% of threshold, radius 0.00019391793797: 0 overlaps
+dimer, between thresholds, radius 0.000204132674123: 3 overlaps
+dimer, 105% of threshold, radius 0.000214330352494: 10 overlaps
+approximant, 95% of threshold, radius 0.000193934142525: 0 overlaps
+approximant, between thresholds, radius 0.000204132674123: 2 overlaps
+approximant, 105% of threshold, radius 0.00021434826279: 87 overlaps
+Exact rational check of the binary host inputs at the intermediate radius
+  dimer overlap witness: True
+  approximant nonoverlap certificate: True

@@ -38,7 +38,7 @@ def exact_rotation(a, b, c, d):
     return tuple(scale(1 / squared_norm, row) for row in numerator)
 
 
-def packing(lengths, rows, expansion):
+def cell(lengths, rows, expansion):
     periods = tuple(tuple(expansion * length if i == j else 0 for j in range(3))
                     for i, length in enumerate(lengths))
     pieces = []
@@ -47,7 +47,11 @@ def packing(lengths, rows, expansion):
         rotation = exact_rotation(*quaternion)
         pieces.append(tuple(add(center, tuple(dot(row, v) for row in rotation))
                             for v in REFERENCE))
-    return replay(periods, pieces)
+    return periods, tuple(pieces)
+
+
+def packing(lengths, rows, expansion):
+    return replay(*cell(lengths, rows, expansion))
 
 
 def main():

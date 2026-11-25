@@ -8,7 +8,11 @@ from pathlib import Path
 import gsd.hoomd
 import numpy as np
 
-from check import load_cell, regular_cell_dimensions
+if __package__:
+    from .check import load_cell, regular_cell_dimensions
+else:
+    from check import load_cell, regular_cell_dimensions
+
 from replay import cross, dot, scale, sub
 
 

@@ -49,10 +49,13 @@ def normals(vertices):
     return tuple(cross(sub(y, x), sub(z, x)) for x, y, z in combinations(vertices, 3))
 
 
-def separating_axis(left, right):
-    axes = (*normals(left), *normals(right),
+def candidate_axes(left, right):
+    return (*normals(left), *normals(right),
             *(cross(a, b) for a, b in product(edges(left), edges(right))))
-    for n in axes:
+
+
+def separating_axis(left, right):
+    for n in candidate_axes(left, right):
         if not any(n):
             continue
         a = [dot(n, v) for v in left]

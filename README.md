@@ -37,3 +37,4 @@ python3 restricted_probe.py
 The [research report](REPORT.md) documents the prior-art search, the scope of the formal results, and the benchmarks.
 
 The [simulation benchmark](benchmarks/README.md) provides exact periodic-cell coordinates and an overlap control as JSON.
+It also includes [clearance certificates and rounded-particle controls](benchmarks/README.md#clearance-under-coordinate-uncertainty) for the dimer and the published quasicrystal approximant.

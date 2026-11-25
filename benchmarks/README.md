@@ -148,8 +148,9 @@ rotation matrix can be formed by dividing its quadratic numerator by the
 squared norm. On the unexpanded displayed box, the rational replay checked
 3,558 pair shifts, found separation in every case and reproduced the
 published volume fraction `0.8478659094` to the displayed precision. This
-is a computed result for the rational reconstruction. Certifying the
-82-particle geometry in Lean would be a separate performance problem.
+is a computed result for the rational reconstruction. Certifying the exact
+unexpanded geometry in Lean is a separate problem from certifying a
+positive tolerance for the expanded cell below.
 A sufficient common denominator has 1,531 decimal digits and each piece
 pair would otherwise search a shared list of candidate axes. Pair-specific
 witnesses would let the checker test fewer axes. The separately reported
@@ -167,3 +168,90 @@ curl -fL https://arxiv.org/pdf/1012.5138v1 -o "$work/tetrahedra-phases.pdf" &&
 
 The unexpanded replay also checks its exact rational density and separation
 count against the recorded reference values.
+
+## Clearance under coordinate uncertainty
+
+The clearance calculation starts from the published dimer crystal or the
+82-particle reconstruction. By default it scales the basis and particle
+centroids by `1001/1000` while preserving the particle shapes. A fractional
+coordinate is a component of the inverse basis applied to a vertex. A budget
+of `r` allows each component of each vertex to differ from its reference
+by up to `r`. The same fractional claim applies under any invertible
+realization of the cell. In particular, a change in the basis must be accounted
+for when converting the actual vertices to fractional coordinates.
+
+For the fixed nominal basis, divide a fractional budget by the largest
+absolute row sum of the inverse basis to obtain a sufficient bound on
+Cartesian coordinate error. The two Cartesian values are in their respective
+source units. To compare relative tolerances, also divide by each source's
+particle edge length.
+
+```sh
+python3 -m benchmarks.clearance --controls
+python3 -m benchmarks.clearance --table "$work/tetrahedra-table.txt" \
+  --controls --rounding-search 1/100 --emit-lean "$work" --check-lean 4
+```
+
+Omit `--check-lean` to generate the source modules without compiling.
+The 82-particle calculation splits its certificates into independent
+Lean modules. Reduce the process count if memory is limited.
+
+The script reports the limiting pair found by the search. The positive
+control expands the dimer and the zero-clearance control uses the exact
+contact geometry. The compressed dimer control supplies an exact common
+interior point by checking strictly positive barycentric weights in the two
+full-dimensional tetrahedra.
+
+[The general theorem](../TetrahedronPacking/PeriodicClearance.lean) transfers
+separating planes to perturbed hulls, including a variant for two different
+bases, and [the integer checker](../TetrahedronPacking/ClearanceCertificate.lean)
+checks one witness per required shift. The generated Lean files use
+`disjoint_within_clearance` for the integer vertices at scale `10^9` and
+`disjoint_near_reference` for the rational vertices. Lean checks the
+quantization bound between them and deducts one grid unit from the budget.
+`pairwise_disjoint_near_reference` compares copies at arbitrary lattice
+indices. The [checked dimer certificate](generated/DimerClearance.lean)
+allows fractional vertex error at most `77892/1000000000`.
+Reproducing the coordinates from the primary sources still uses the Python
+reconstruction. The period is part of the geometry, and the finite search
+boxes include candidate shifts created by perturbations.
+
+The optional rounding calculation uses Cartesian balls at fixed poses.
+For the default expansion, exact rational computations match a lower
+bound with an upper bound for each cell. The lower bound uses support gaps
+and squared lengths of separating directions. The upper bound uses two
+points, one in each limiting particle. A radius greater than half their
+distance puts the midpoint in the interior of both rounded particles.
+
+| Expanded cell | Limiting geometry | Squared radius divided by squared particle edge |
+| --- | --- | ---: |
+| Dimer | Facing face centroids of particles 0 and 1 | `1/24000000` |
+| 82-particle approximant | Points on edges of particles 5 and 8, with shift `(0,-1,0)` | approximately `4.16736306224e-8` |
+
+Both endpoints are replayed with exact fractions. The approximant's
+normalized rounding radius is about 0.00836% larger at this expansion.
+This comparison concerns the given poses and basis, with a Euclidean ball
+added to every particle. Optimizing positions and bases would address a
+different physical question. The rounding computation is currently a
+Python result. [Rounded tetrahedra study](https://pubmed.ncbi.nlm.nih.gov/33103878/)
+
+With the serial CPU build of HOOMD-blue installed, run the same cases
+through its rounded-polyhedron overlap test.
+
+```sh
+python3 -m benchmarks.rounded_hoomd "$work/tetrahedra-table.txt"
+```
+
+| Rounding radius | Dimer overlaps | Approximant overlaps |
+| --- | ---: | ---: |
+| 95% of each cell's threshold | 0 | 0 |
+| Same radius between the two thresholds | 3 | 2 |
+| 105% of each cell's threshold | 10 | 87 |
+
+These are observed HOOMD-blue 7.2.2 CPU counts with zero trial moves.
+At the intermediate radius, the exact reconstruction predicts overlapping
+dimer interiors and disjoint approximant interiors. The approximant count
+shows that the exact distinction did not survive this combined coordinate
+conversion and reduced-precision overlap check. The benchmark leaves the
+contributions of conversion and overlap arithmetic unresolved.
+[HOOMD-blue rounded-particle model](https://hoomd-blue.readthedocs.io/en/stable/hoomd/hpmc/integrate/convexspheropolyhedron.html)

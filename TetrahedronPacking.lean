@@ -1,3 +1,4 @@
 import TetrahedronPacking.RecordDensity
 import TetrahedronPacking.CellImprovement
 import TetrahedronPacking.RestrictedDeterminant
+import TetrahedronPacking.ClearanceCertificate
